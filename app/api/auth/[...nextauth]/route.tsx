@@ -3,6 +3,7 @@ import NextAuth from 'next-auth'
 // import GithubProvider from 'next-auth/providers/github'
 import GoogleProvider from 'next-auth/providers/google'
 import type { Adapter } from 'next-auth/adapters';
+// import { User as NextAuthUser } from 'next-auth'
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import { PrismaClient } from "@prisma/client"
 

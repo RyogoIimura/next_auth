@@ -3,7 +3,7 @@ import { signIn, signOut, useSession } from "next-auth/react"
 
 const IndexPage = () => {
   const { data: session } = useSession()
-
+  console.log(process.env.NEXT_PUBLIC_NEXTAUTH_SECRET);
   return (
     <>
       <div className="flex justify-center">

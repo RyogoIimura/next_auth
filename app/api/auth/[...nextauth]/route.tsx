@@ -10,7 +10,7 @@ import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient()
 
 export const authOptions = {
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET,
   adapter: PrismaAdapter(prisma) as Adapter,
   providers: [
     // GithubProvider({
@@ -18,12 +18,12 @@ export const authOptions = {
     //   clientSecret: process.env.GITHUB_CLIENT_SECRET ?? '',
     // }),
     GoogleProvider({
-      clientId: process.env.Google_CLIENT_ID ?? '',
-      clientSecret: process.env.Google_CLIENT_SECRET ?? '',
+      clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID ?? '',
+      clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET ?? '',
     }),
   ],
 }
 
 const handler = NextAuth(authOptions)
-
+console.log(handler);
 export { handler as GET, handler as POST }
